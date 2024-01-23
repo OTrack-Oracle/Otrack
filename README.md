@@ -7,7 +7,7 @@ The lack of a trustless data indexing service is one of the primary reasons why 
 
 On December 27, 2023, the Blockstream satellite transmitted a succinct zero-knowledge proof of the Bitcoin chain state, a technology developed by the [Zerosync](https://zerosync.org/) team, enabling applications to verify the Bitcoin chain state without the need to validate each block individually.
 
-This product has inspired us for our endeavor to create a decentralized data indexing oracle for Bitcoin L1 assets, allowing millions of nodes to enter without the need to index the entire chain.
+This has inspired us for our endeavor to create a decentralized data indexing oracle for Bitcoin L1 assets, allowing millions of nodes to enter without the need to index the entire chain.
 
 ## OTrack Light Index
 "OTrack light index" aims to develop efficient and low-cost on-chain data indexing solution, harnessing ZK rollup and DePIN to create decentralized oracle ouptting deterministic & verifiable on-chain data. This solution will be significantly valuable for establishing "account state" of the assets recorded in the blockchain ledger but are not processed by chain miners, allowing state transition to "happen" in a trustless & programmable way. Naturally fit for blockchain like Bitcoin that is lack of programmability in layer 1.
@@ -18,7 +18,7 @@ Let's take “creating account state for a BRC20 token" as the first challenge.
 Inheriting Bitcoin's UTXO model, we will track BRC20 token balance by the valid inscriptions (UTXOs) belong to each address, based on the BRC20 protocol and Ordinals protocol. Light indexers can align with the latest protocol metadata through client version update, these protocols can be BRC20, BRC30, ARC20, SCR20, etc. After obtaining new inscriptions, light indexers will validate inscriptions by the corresponding protocols and abandon invalid inscriptions.
 
 ### Transaction verification
-We call it "One-block-only" indexing. Different from traditional blockchain data indexing, which needs to sync nearly 500GB of historical blockchain data, OTrack light index uses a [succinct zero-knowledge Bitcoin chainstate proof](https://zerosync.org/zerosync.pdf) (kudos to the Zerosync team) and only need to index the latest Bitcoin block for pasring newest BRC20 token state transition information, and verify the transation against a zero-knowledge global state proof provided by the oracle which will be introduced below.
+We call it "one-block-only" indexing. Different from traditional blockchain data indexing, which needs to sync nearly 500GB of historical blockchain data, OTrack light index uses a [succinct zero-knowledge Bitcoin chainstate proof](https://zerosync.org/zerosync.pdf) (kudos to the Zerosync team) and only need to index the latest Bitcoin block for pasring newest BRC20 token state transition information, and verify the transation against a zero-knowledge global state proof provided by the oracle which will be introduced below.
 
 <img width="395" alt="image" src="https://github.com/OTrack-Oracle/Otrack/assets/86393764/549ad370-bade-4665-9cc5-f60f12b977bb">
 
