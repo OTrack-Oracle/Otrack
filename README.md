@@ -1,5 +1,5 @@
 # OTrack
-Decentralized oracle indexing node for edge computing
+Decentralized blockchain data indexing node for edge computing
 ## Background
 In addition to being the digital cash, the bitcoin ledger has been leveraged as the asset settlement layer for many new assets created via off-chain protocols. These asset protocols use fields in Bitcoin UTXO (OP_RETURN, Taproot scripts) that are not executed by miners to log information to the Bitcoin ledger. Bitcoin L2 extends the programmability of Bitcoin L1, allowing L1 assets to have more utilities and interact with L2 dApps. Transaction settlements to L1 will remain as a need and L1 asset data feed to L2 will be the foundation to lots of L2 dApps.
 
