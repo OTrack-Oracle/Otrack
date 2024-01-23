@@ -18,15 +18,13 @@ Let's take “creating account state for a BRC20 token" as the first challenge.
 Inheriting Bitcoin's UTXO model, we will track BRC20 token balance by the valid inscriptions (UTXOs) belong to each address, based on the BRC20 protocol and Ordinals protocol.
 
 ### Protocol validation
+Light indexers can align with the latest protocol metadata through client version update, these protocols can be BRC20, BRC30, ARC20, SCR20, etc. After obtaining new inscriptions, light indexers will validate inscriptions by the corresponding protocols and abandon invalid inscriptions.
 
-
-### Data source
-Different from traditional blockchain data indexing, which needs to sync nearly 500GB of historical blockchain data, OTrack light index uses a [succinct zero-knowledge Bitcoin chainstate proof](https://zerosync.org/zerosync.pdf) (kudos to the Zerosync team) and only need to index the latest Bitcoin block for pasring newest BRC20 token state transition information, and verify the transation against a zero-knowledge global state proof provided by the oracle which will be introduced below. 
+### Transaction verification
+We call it "One-block-only" indexing. Different from traditional blockchain data indexing, which needs to sync nearly 500GB of historical blockchain data, OTrack light index uses a [succinct zero-knowledge Bitcoin chainstate proof](https://zerosync.org/zerosync.pdf) (kudos to the Zerosync team) and only need to index the latest Bitcoin block for pasring newest BRC20 token state transition information, and verify the transation against a zero-knowledge global state proof provided by the oracle which will be introduced below.
 
 <img width="395" alt="image" src="https://github.com/OTrack-Oracle/Otrack/assets/86393764/549ad370-bade-4665-9cc5-f60f12b977bb">
 
-
-### Transaction verification
 
 ## Decentralized data aggregation (the oracle)
 
